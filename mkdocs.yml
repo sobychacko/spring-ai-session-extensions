@@ -1,0 +1,80 @@
+site_name: Spring AI Session Extensions
+site_description: Add-ons for the session in Spring AI 2.1
+repo_url: https://github.com/spring-ai-community/spring-ai-session-extensions
+repo_name: spring-ai-community/spring-ai-session-extensions
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+nav:
+  - Home: index.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  # The docs.yml workflow publishes with `mike`, which needs this provider for the
+  # version selector to appear in the header.
+  version:
+    provider: mike
+    default:
+      - latest-snapshot
+      - latest
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/spring-ai-community/spring-ai-session-extensions
+  generator: false
+
+plugins:
+  - search
