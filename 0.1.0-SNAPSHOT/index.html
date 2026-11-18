@@ -580,8 +580,9 @@
   
 
 
-<p><img alt="Spring AI" src="assets/images/spring-ai-title-logo-light.svg#only-light" width="320" />
-<img alt="Spring AI" src="assets/images/spring-ai-title-logo-dark.svg#only-dark" width="320" /></p>
+<!-- ![Spring AI](assets/images/spring-ai-title-logo-light.svg#only-light){ width="320" }
+![Spring AI](assets/images/spring-ai-title-logo-dark.svg#only-dark){ width="320" } -->
+
 <h1 id="spring-ai-session-extensions">Spring AI Session Extensions<a class="headerlink" href="#spring-ai-session-extensions" title="Permanent link">&para;</a></h1>
 <p>Add-ons for the session support in <a href="https://docs.spring.io/spring-ai/reference/">Spring AI</a> 2.1.</p>
 <p>Spring AI 2.1 has the session itself: the event log, the stores, the <code>ChatClient</code> advisors, compaction and recall.
@@ -604,12 +605,12 @@ It uses only the public extension points of the session: event types of its own,
 <tr>
 <td><strong>Session Turn</strong></td>
 <td><code>spring-ai-session-turn</code></td>
-<td>Turn state for a session, kept as events in the session log. No dependency on the <code>ChatClient</code>.</td>
+<td>The <code>TurnService</code>: it starts, ends, interrupts, parks and resumes the turns of a session, and records each change as a <code>TURN.*</code> event in the session's log. It works with any Spring AI session store and does not depend on the <code>ChatClient</code>.</td>
 </tr>
 <tr>
 <td><strong>Session Turn Advisor</strong></td>
 <td><code>spring-ai-session-turn-advisor</code></td>
-<td>The <code>ChatClient</code> binding of the turn: an advisor around the Spring AI session advisors.</td>
+<td>The <code>ChatClient</code> binding of the turn. The <code>TurnStatusAdvisor</code> runs every call as a turn, parks a turn whose tool call waits for a person's confirmation, and resumes it from the decisions. The <code>TurnInterruptAdvisor</code> stops the tool loop of an interrupted call. <code>TurnAdvisors</code> builds the whole advisor chain.</td>
 </tr>
 <tr>
 <td><strong>BOM</strong></td>
@@ -618,7 +619,7 @@ It uses only the public extension points of the session: event types of its own,
 </tr>
 </tbody>
 </table>
-<p><a href="turn/turn-status/">Turn Status</a> explains the turn service, and <a href="turn/chat-client/">Turns in the ChatClient</a> the planned <code>ChatClient</code> binding.</p>
+<p><a href="turn/turn-status/">Turn Status</a> explains the turn service, and <a href="turn/chat-client/">Turns in the ChatClient</a> the <code>ChatClient</code> binding.</p>
 <p>Stores beyond the ones in Spring AI go into the <code>session-repositories</code> folder of the project.
 A store is built here first and moves into Spring AI when it is stable.</p>
 

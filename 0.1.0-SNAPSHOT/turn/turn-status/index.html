@@ -501,6 +501,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#what-each-method-does-in-each-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each method does in each state
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-run-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The run id
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-a-change-is-written" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -648,6 +670,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#what-each-method-does-in-each-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What each method does in each state
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-run-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The run id
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-a-change-is-written" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -785,10 +829,10 @@
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="c1">// run the turn: call the model, run tools, append messages</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">turns</span><span class="p">.</span><span class="na">end</span><span class="p">(</span><span class="n">sessionId</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">.</span><span class="na">runId</span><span class="p">(),</span><span class="w"> </span><span class="n">StopReason</span><span class="p">.</span><span class="na">END_TURN</span><span class="p">);</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">turns</span><span class="p">.</span><span class="na">end</span><span class="p">(</span><span class="n">sessionId</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">,</span><span class="w"> </span><span class="n">StopReason</span><span class="p">.</span><span class="na">END_TURN</span><span class="p">);</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">}</span>
 </span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RuntimeException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">turns</span><span class="p">.</span><span class="na">end</span><span class="p">(</span><span class="n">sessionId</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">.</span><span class="na">runId</span><span class="p">(),</span><span class="w"> </span><span class="n">StopReason</span><span class="p">.</span><span class="na">ERROR</span><span class="p">);</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="n">turns</span><span class="p">.</span><span class="na">end</span><span class="p">(</span><span class="n">sessionId</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">,</span><span class="w"> </span><span class="n">StopReason</span><span class="p">.</span><span class="na">ERROR</span><span class="p">);</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="n">ex</span><span class="p">;</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="p">}</span>
 </span></code></pre></div>
@@ -813,7 +857,7 @@ That is why it stays outside the second <code>try</code>: there is no turn to en
 <tbody>
 <tr>
 <td><code>TURN.STATUS</code></td>
-<td>A turn starts or ends</td>
+<td>A turn starts, ends, parks or resumes</td>
 <td><code>status</code>, <code>runId</code>, <code>stopReason</code></td>
 </tr>
 <tr>
@@ -872,6 +916,87 @@ An idle session tells why its last turn ended:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="what-each-method-does-in-each-state">What each method does in each state<a class="headerlink" href="#what-each-method-does-in-each-state" title="Permanent link">&para;</a></h2>
+<p>For the methods of the turn service, a session is in one of three states:</p>
+<ul>
+<li><strong>Idle.</strong> No turn runs and no question is open. The status is <code>IDLE</code> with any stop reason but <code>REQUIRES_ACTION</code>, or the session has no status yet.</li>
+<li><strong>Running.</strong> A turn runs. The status is <code>RUNNING</code>.</li>
+<li><strong>Parked.</strong> A turn stopped on a question and waits for the answer. The status is <code>IDLE</code> with <code>REQUIRES_ACTION</code>. See <a href="#a-turn-that-waits-for-a-person">a turn that waits for a person</a>.</li>
+</ul>
+<pre class="mermaid"><code>stateDiagram-v2
+    direction LR
+    [*] --&gt; Idle
+    Idle --&gt; Running : start
+    Running --&gt; Idle : end, interrupt
+    Running --&gt; Parked : park
+    Parked --&gt; Running : resume</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Idle</th>
+<th>Running</th>
+<th>Parked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>Starts a turn.</td>
+<td>Throws <code>TurnInProgressException</code>.</td>
+<td>Throws <code>TurnParkedException</code>.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Writes nothing.</td>
+<td>Ends the turn, when it is the caller's.</td>
+<td>Writes nothing.</td>
+</tr>
+<tr>
+<td><code>park</code></td>
+<td>Writes nothing.</td>
+<td>Parks the turn, when it is the caller's.</td>
+<td>Writes nothing.</td>
+</tr>
+<tr>
+<td><code>interrupt</code></td>
+<td>Records the request.</td>
+<td>Records the request and ends the turn with <code>INTERRUPTED</code>.</td>
+<td>Records the request. The question stays open.</td>
+</tr>
+<tr>
+<td><code>resume</code></td>
+<td>Throws <code>IllegalStateException</code>.</td>
+<td>Throws <code>TurnInProgressException</code>.</td>
+<td>Records the answer and runs the turn again.</td>
+</tr>
+</tbody>
+</table>
+<p><code>status</code> and <code>pendingQuestion</code> only read.</p>
+<p>Two rules of the parked state are easy to miss:</p>
+<ul>
+<li><strong><code>start</code> refuses a parked session.</strong> A new turn would leave the question open. Resume the session instead.</li>
+<li><strong><code>interrupt</code> does not close a question.</strong> A parked session has no turn to stop, so the session stays parked. To close the question, resume with an answer that says the person moved on.</li>
+</ul>
+<h2 id="the-run-id">The run id<a class="headerlink" href="#the-run-id" title="Permanent link">&para;</a></h2>
+<p>Every turn runs under a run id.
+The run id names the harness run that owns the turn: a request, a job, an agent run.
+The session does not interpret it.</p>
+<ul>
+<li><strong><code>start</code> and <code>resume</code> take a run id.</strong> When you pass <code>null</code>, they generate a random UUID. The returned status carries the run id either way.</li>
+<li><strong><code>end</code> and <code>park</code> take the turn, not the run id.</strong> The turn is the status that <code>start</code> or <code>resume</code> returned. A run id may repeat, so only that status tells one turn from a later one under the same run id.</li>
+<li><strong><code>interrupt</code> takes no run id.</strong> It ends whatever turn runs, so a stop button does not need to know the owner.</li>
+<li><strong>A refused start names the owner.</strong> <code>TurnInProgressException.getRunId()</code> returns the run id of the turn that runs.</li>
+<li><strong>An idle session keeps the run id of its last turn</strong>, next to the stop reason.</li>
+</ul>
+<p>A resume does not have to use the run id of the turn that parked.
+The turn often resumes on another instance, or hours later, under a run of its own.
+Pass the old run id to keep one run id across the pause, or pass <code>null</code> for a new one.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">TurnStatus</span><span class="w"> </span><span class="n">parked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">turns</span><span class="p">.</span><span class="na">park</span><span class="p">(</span><span class="n">sessionId</span><span class="p">,</span><span class="w"> </span><span class="n">turn</span><span class="p">,</span><span class="w"> </span><span class="n">question</span><span class="p">);</span><span class="w">           </span><span class="c1">// IDLE, run-1, REQUIRES_ACTION</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">turns</span><span class="p">.</span><span class="na">resume</span><span class="p">(</span><span class="n">sessionId</span><span class="p">,</span><span class="w"> </span><span class="n">parked</span><span class="p">.</span><span class="na">runId</span><span class="p">(),</span><span class="w"> </span><span class="n">answer</span><span class="p">);</span><span class="w">                     </span><span class="c1">// RUNNING under run-1 again</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">turns</span><span class="p">.</span><span class="na">resume</span><span class="p">(</span><span class="n">sessionId</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="n">answer</span><span class="p">);</span><span class="w">                               </span><span class="c1">// or RUNNING under a new run id</span>
+</span></code></pre></div>
 <h2 id="how-a-change-is-written">How a change is written<a class="headerlink" href="#how-a-change-is-written" title="Permanent link">&para;</a></h2>
 <p>Every method that changes the status follows the same steps.
 It reads the log's version, then the current status, and decides.
@@ -895,7 +1020,7 @@ After five refused attempts it gives up with an <code>IllegalStateException</cod
     K -- yes --&gt; L([Throw IllegalStateException])</code></pre>
 <p><code>end</code>, <code>interrupt</code>, <code>park</code> and <code>resume</code> follow the same loop with their own decision:</p>
 <ul>
-<li><strong><code>end</code></strong> writes only when the turn runs under the caller's run id. Otherwise it writes nothing and returns the status as it stands. So a late end never overwrites a later turn, and an interrupt that landed first stands.</li>
+<li><strong><code>end</code></strong> writes only while the caller's turn runs. Otherwise it writes nothing and returns the status as it stands. So a harness ends only its own turn: a late <code>end</code> never ends a later turn, and an interrupt that landed first stands.</li>
 <li><strong><code>interrupt</code></strong> writes the <code>TURN.INTERRUPT</code> event and, when a turn runs, the <code>TURN.STATUS</code> event that ends it, in one append.</li>
 <li><strong><code>park</code></strong> and <strong><code>resume</code></strong> are described below.</li>
 </ul>
@@ -906,18 +1031,22 @@ After five refused attempts it gives up with an <code>IllegalStateException</cod
         +TurnService(SessionService)
         +status(sessionId) TurnStatus
         +start(sessionId, runId) TurnStatus
-        +end(sessionId, runId, StopReason) TurnStatus
+        +end(sessionId, turn, StopReason) TurnStatus
         +interrupt(sessionId, reason) TurnStatus
-        +park(sessionId, runId, Question) TurnStatus
+        +park(sessionId, turn, Question) TurnStatus
         +pendingQuestion(sessionId) SessionEvent
         +resume(sessionId, runId, answer) TurnStatus
+        +resume(sessionId, runId, questionEventId, answer) TurnStatus
     }
     class TurnStatus {
         &lt;&lt;record&gt;&gt;
         +status SessionStatus
         +runId String
         +stopReason StopReason
+        +since Instant
+        +eventId String
         +isRunning() boolean
+        +stillRuns(turn) boolean
         +isParked() boolean
     }
     class SessionStatus {
@@ -965,14 +1094,17 @@ After five refused attempts it gives up with an <code>IllegalStateException</cod
 <p><code>SessionService</code> is Spring AI's interface. <code>TurnEventTypes</code> holds the four event types, and <code>SessionStatusEvents</code> and <code>QuestionEvents</code> build and read the events. The diagram leaves those helpers out.</p>
 <h2 id="a-turn-that-waits-for-a-person">A turn that waits for a person<a class="headerlink" href="#a-turn-that-waits-for-a-person" title="Permanent link">&para;</a></h2>
 <p>A turn can stop to ask a person something and go on later with the answer, on any instance, after any delay.
-The first kind of question is a tool call that needs a person's confirmation.</p>
+The built-in kind of question is a tool confirmation: a tool call that needs a person's decision.
+A harness can also park on a question of its own kind.</p>
 <ul>
 <li><strong><code>park</code></strong> writes a <code>TURN.QUESTION</code> event and a <code>TURN.STATUS</code> event <code>IDLE</code> with <code>REQUIRES_ACTION</code>, in one append. The session is then parked. It holds no turn while the person thinks.</li>
 <li><strong><code>pendingQuestion</code></strong> returns the open question: the newest <code>TURN.QUESTION</code> event when no <code>TURN.ANSWER</code> follows it.</li>
 <li><strong><code>resume</code></strong> writes a <code>TURN.ANSWER</code> event that points at the question, and a <code>TURN.STATUS</code> event <code>RUNNING</code>, in one append. Only a parked session resumes, so the same answer sent twice resumes once.</li>
-<li><strong><code>start</code></strong> on a parked session throws <code>TurnParkedException</code>. A new turn would leave the question open.</li>
+<li><strong><code>resume</code> with a question id</strong> refuses when that question already has an answer. Pass the id of the question you read with <code>pendingQuestion</code>. Two callers that read the same question then cannot both resume: the second one fails, even when the turn has parked again on a new question in between.</li>
 </ul>
-<p><code>ToolConfirmationQuestion</code> is the shape for a tool confirmation: the event id of the stored reply, and its tool calls with the ones that wait for a decision. The answer is Spring AI's <code>ToolCallDecisions</code>.</p>
+<p><code>ToolConfirmationQuestion</code> is the shape of a tool confirmation.
+It holds the event id of the stored reply and the reply's tool calls, each marked whether it waits for a decision.
+The answer is Spring AI's <code>ToolCallDecisions</code>.</p>
 <p>A harness parks a turn and a UI resumes it:</p>
 <pre class="mermaid"><code>sequenceDiagram
     participant H as Harness
@@ -984,7 +1116,7 @@ The first kind of question is a tool call that needs a person's confirmation.</p
     T-&gt;&gt;S: getEventVersion, newest TURN.STATUS
     T-&gt;&gt;S: appendEvents [TURN.STATUS RUNNING]
     Note over H: the model asks for a tool&lt;br/&gt;that needs a confirmation
-    H-&gt;&gt;T: park(sessionId, "run-1", question)
+    H-&gt;&gt;T: park(sessionId, turn, question)
     T-&gt;&gt;S: appendEvents [TURN.QUESTION,&lt;br/&gt;TURN.STATUS IDLE REQUIRES_ACTION]
     Note over H,S: the harness may stop here, even restart
     U-&gt;&gt;T: pendingQuestion(sessionId)
@@ -995,9 +1127,10 @@ The first kind of question is a tool call that needs a person's confirmation.</p
     Note over U,S: the harness runs the allowed tools&lt;br/&gt;and the turn goes on</code></pre>
 <h2 id="what-it-does-not-do">What it does not do<a class="headerlink" href="#what-it-does-not-do" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>No guard on the log.</strong> An append never needs a running turn. A harness that does not call <code>start</code> still appends its messages, also while another turn runs. So the turn status protects a session only when every harness that writes to it runs its turns through the turn service.</li>
 <li><strong>No lease.</strong> A turn whose harness died stays <code>RUNNING</code> until someone calls <code>interrupt</code>, which ends it. A later version can add a lease that lets the next start take over a turn that ran too long.</li>
 <li><strong>One answer per question.</strong> The answer decides every tool call of the question at once. An application that collects decisions one by one holds them until it has all.</li>
-<li><strong>No stop by itself.</strong> An interrupt changes the status. The harness that runs the turn learns of it only when it reads the status, between two model calls for example.</li>
+<li><strong>No stop by itself.</strong> An interrupt changes the status. The harness that runs the turn learns of it only when it reads the status, between two model calls for example. Check with <code>turns.status(sessionId).stillRuns(turn)</code>. The <a href="../chat-client/#interrupting-a-running-call"><code>ChatClient</code> binding</a> does this check for you.</li>
 <li><strong>No transaction around it.</strong> Run the turn service outside a surrounding transaction. Inside one with repeatable read isolation, the version read does not see what another writer committed, and every attempt fails.</li>
 </ul>
 
