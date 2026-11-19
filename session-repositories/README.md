@@ -5,6 +5,12 @@ Spring AI 2.1 has the in-memory store and the JDBC store. This folder is for the
 
 The layout follows Spring AI, which keeps its JDBC store in `session-repositories/spring-ai-session-jdbc`.
 
+## Stores
+
+| Store | Module | Docs |
+|---|---|---|
+| Kafka | [`spring-ai-session-kafka`](spring-ai-session-kafka) | [Kafka Session Repository](../docs/session-repositories/kafka.md) |
+
 ## Path to Spring AI
 
 A store here is a candidate for Spring AI.

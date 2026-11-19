@@ -79,6 +79,7 @@
 	<modules>
 		<module>spring-ai-session-turn</module>
 		<module>spring-ai-session-turn-advisor</module>
+		<module>session-repositories/spring-ai-session-kafka</module>
 		<module>spring-ai-session-extensions-bom</module>
 	</modules>
 
@@ -110,6 +111,11 @@
 			<dependency>
 				<groupId>org.springaicommunity</groupId>
 				<artifactId>spring-ai-session-turn-advisor</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springaicommunity</groupId>
+				<artifactId>spring-ai-session-kafka</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
