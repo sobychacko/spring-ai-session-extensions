@@ -100,7 +100,7 @@ import org.springframework.util.Assert;
  * {@link #close()} stops it.
  *
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 public final class KafkaSessionRepository implements SessionRepository, SmartLifecycle, AutoCloseable {
 

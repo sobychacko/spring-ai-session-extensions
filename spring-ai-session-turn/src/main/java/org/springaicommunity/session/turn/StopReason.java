@@ -21,7 +21,7 @@ package org.springaicommunity.session.turn;
  * it, and {@link TurnStatus#stopReason()} reports it while the session is idle.
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public enum StopReason {
 

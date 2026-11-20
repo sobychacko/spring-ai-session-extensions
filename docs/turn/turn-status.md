@@ -13,6 +13,17 @@ The module works with any Spring AI session store, because it uses only what eve
 
 ## Using it
 
+Add the dependency, with its version from the [BOM](../index.md#installation):
+
+```xml
+<dependency>
+    <groupId>org.springaicommunity</groupId>
+    <artifactId>spring-ai-session-turn</artifactId>
+</dependency>
+```
+
+Create the turn service on a Spring AI `SessionService`, and run each turn between `start` and `end`:
+
 ```java
 TurnService turns = new TurnService(sessionService);
 

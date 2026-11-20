@@ -6,7 +6,7 @@ Spring AI 2.1 has the session itself: the event log, the stores, the `ChatClient
 This project adds features on top of it and changes nothing in it.
 It uses only the public extension points of the session: event types of its own, version-checked appends, and advisors around the session advisors.
 
-> **Status: experimental.** Nothing is released yet. The API can change between versions.
+> **Status: experimental.** The API can change between versions.
 
 ## Requirements
 
@@ -28,6 +28,43 @@ The group id is `org.springaicommunity`. The Java packages start with `org.sprin
 
 [Turn Status](docs/turn/turn-status.md) explains the turn service, and [Turns in the ChatClient](docs/turn/chat-client.md) the `ChatClient` binding.
 [Kafka Session Repository](docs/session-repositories/kafka.md) explains the Kafka store.
+
+## Installation
+
+The artifacts are on Maven Central.
+Import the BOM, so that the modules need no version:
+
+```xml
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springaicommunity</groupId>
+            <artifactId>spring-ai-session-extensions-bom</artifactId>
+            <version>0.11.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+Then add the modules you use:
+
+```xml
+<dependency>
+    <groupId>org.springaicommunity</groupId>
+    <artifactId>spring-ai-session-turn-advisor</artifactId>
+</dependency>
+```
+
+| To use | Add | It brings |
+|---|---|---|
+| [Turns in the `ChatClient`](docs/turn/chat-client.md) | `spring-ai-session-turn-advisor` | `spring-ai-session-turn` and Spring AI's `spring-ai-session-advisor` |
+| [The turn service](docs/turn/turn-status.md) in a harness of your own | `spring-ai-session-turn` | Spring AI's `spring-ai-session` |
+| [The Kafka session store](docs/session-repositories/kafka.md) | `spring-ai-session-kafka` | Spring AI's `spring-ai-session`, Spring for Apache Kafka and Kafka Streams |
+
+The BOM sets the versions of this project's modules only.
+Spring AI comes from its own BOM, `spring-ai-bom`, in version 2.1.0 or later.
 
 ## Building
 

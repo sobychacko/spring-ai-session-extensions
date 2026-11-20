@@ -26,7 +26,7 @@ import org.springframework.util.Assert;
  * as the resumed one. {@link TurnService#pendingQuestion} returns the question.
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  * @see TurnStatus#isParked()
  */
 public class TurnParkedException extends IllegalStateException {

@@ -27,7 +27,7 @@ import org.springframework.ai.session.EventType;
  * log as the record of the session's turns.
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public final class TurnEventTypes {
 

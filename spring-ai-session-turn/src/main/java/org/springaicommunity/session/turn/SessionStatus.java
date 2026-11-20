@@ -22,7 +22,7 @@ package org.springaicommunity.session.turn;
  * {@link #IDLE}: no harness has run a turn on it yet.
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public enum SessionStatus {
 

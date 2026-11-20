@@ -56,7 +56,7 @@ Event ids are scoped to their session, which the contract allows.
 
 ## Using it
 
-Add the dependency, with its version from the `spring-ai-session-extensions-bom`:
+Add the dependency, with its version from the [BOM](../index.md#installation):
 
 ```xml
 <dependency>

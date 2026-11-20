@@ -47,7 +47,7 @@ import org.springframework.util.Assert;
  * data, so each of them stops startup.
  *
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 final class SessionTopics {
 

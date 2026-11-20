@@ -40,7 +40,7 @@ import org.springframework.util.Assert;
  * when no turn ran yet
  * @param eventId the id of the status event; {@code null} when no turn ran yet
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public record TurnStatus(SessionStatus status, @Nullable String runId, @Nullable StopReason stopReason,
 		@Nullable Instant since, @Nullable String eventId) {

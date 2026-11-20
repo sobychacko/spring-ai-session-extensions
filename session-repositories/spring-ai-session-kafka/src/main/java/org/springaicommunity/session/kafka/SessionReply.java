@@ -35,7 +35,7 @@ import org.jspecify.annotations.Nullable;
  * @param sessions the sessions a metadata lookup found
  * @param events the events a read selected
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 record SessionReply(@Nullable Rejection rejection, @Nullable String message, @Nullable Boolean flag,
 		@Nullable Long count, @Nullable Instant createdAt, @Nullable SessionValue session,

@@ -32,7 +32,7 @@ import org.springframework.util.Assert;
  * interrupt node resumes with, the elicitation result; {@code null} for an
  * acknowledgement without content
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public record Answer(String questionEventId, @Nullable Object value) {
 

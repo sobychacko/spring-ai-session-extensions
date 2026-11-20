@@ -58,7 +58,7 @@ import org.springframework.util.Assert;
  * processing rolls back the store changes it made.
  *
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 final class SessionProcessor extends ContextualProcessor<String, byte[], String, byte[]> {
 

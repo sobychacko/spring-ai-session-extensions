@@ -33,7 +33,7 @@ import org.springframework.util.Assert;
  * @param expiresAt when it expires, or {@code null} for never
  * @param metadata the metadata as JSON
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 record SessionValue(String id, Instant createdAt, @Nullable Instant expiresAt, String metadata) {
 

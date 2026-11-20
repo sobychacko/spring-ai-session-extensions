@@ -7,6 +7,17 @@ A later call with the person's decisions resumes it, on any instance.
 
 ## Using it
 
+Add the dependency, with its version from the [BOM](../index.md#installation):
+
+```xml
+<dependency>
+    <groupId>org.springaicommunity</groupId>
+    <artifactId>spring-ai-session-turn-advisor</artifactId>
+</dependency>
+```
+
+It brings the turn service and the Spring AI session advisors.
+
 `TurnAdvisors` builds the advisor chain: the Spring AI session advisors, and the two advisors of this module around them.
 
 ```java

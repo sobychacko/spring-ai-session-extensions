@@ -39,7 +39,7 @@ import org.springframework.util.Assert;
  * JSON but lacks one fails to parse, and the task skips it rather than failing on it.
  *
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "op")
 @JsonSubTypes({ @JsonSubTypes.Type(value = SessionRequest.Save.class, name = "SAVE"),

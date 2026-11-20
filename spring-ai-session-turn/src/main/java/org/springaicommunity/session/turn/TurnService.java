@@ -55,7 +55,7 @@ import org.springframework.util.StringUtils;
  * from a later one under the same run id.
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  * @see TurnStatus
  */
 public final class TurnService {

@@ -41,7 +41,7 @@ import org.springframework.util.Assert;
  * audit trail and never reach a prompt: the active view holds message events only.
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public final class QuestionEvents {
 

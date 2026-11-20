@@ -38,7 +38,7 @@ import org.springframework.util.Assert;
  * A tool confirmation carries the calls that wait for a decision and names the reply they
  * belong to. {@code null} when the kind says it all
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public record Question(String kind, @Nullable Object payload) {
 

@@ -62,7 +62,7 @@ import org.springframework.util.Assert;
  * @param replyEventId the event id of the stored reply whose calls wait
  * @param toolCalls the reply's calls, in the order the model asked for them
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public record ToolConfirmationQuestion(String replyEventId, List<ToolCall> toolCalls) {
 

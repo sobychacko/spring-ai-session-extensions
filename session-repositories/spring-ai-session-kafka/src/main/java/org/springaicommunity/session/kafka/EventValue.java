@@ -42,7 +42,7 @@ import org.springframework.util.Assert;
  * @param payload the JSON payload the codec writes
  * @param metadata the event metadata as JSON
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 record EventValue(String id, String sessionId, Instant timestamp, String type, @Nullable String messageType,
 		@Nullable String text, String payload, String metadata) {

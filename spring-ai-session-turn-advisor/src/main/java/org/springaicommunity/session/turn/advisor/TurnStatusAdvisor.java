@@ -94,7 +94,7 @@ import org.springframework.util.StringUtils;
  * }</pre>
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public final class TurnStatusAdvisor implements CallAdvisor, StreamAdvisor {
 

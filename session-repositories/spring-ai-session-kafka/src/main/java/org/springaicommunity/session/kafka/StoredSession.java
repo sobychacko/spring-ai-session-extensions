@@ -28,7 +28,7 @@ import org.jspecify.annotations.Nullable;
  * @param boundarySeq the sequence number of the newest compaction boundary, or
  * {@code null} when the log was never compacted; an active-view read starts there
  * @author Soby Chacko
- * @since 0.1.0
+ * @since 0.11.0
  */
 record StoredSession(SessionValue session, long version, long nextSeq, @Nullable Long boundarySeq) {
 

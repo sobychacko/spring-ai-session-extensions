@@ -38,7 +38,7 @@ import org.springframework.util.Assert;
  * prompt and need no compaction rule.
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public final class SessionStatusEvents {
 

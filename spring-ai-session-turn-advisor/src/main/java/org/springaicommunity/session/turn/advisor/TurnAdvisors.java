@@ -47,7 +47,7 @@ import org.springframework.util.Assert;
  * }</pre>
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public final class TurnAdvisors {
 

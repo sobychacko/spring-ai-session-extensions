@@ -37,7 +37,7 @@ import org.springaicommunity.session.turn.TurnStatus;
  * }</pre>
  *
  * @author Christian Tzolov
- * @since 0.1.0
+ * @since 0.11.0
  */
 public class TurnInterruptedException extends RuntimeException {
 
